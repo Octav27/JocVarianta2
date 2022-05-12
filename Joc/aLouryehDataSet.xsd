@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="aLouryehDataSet" targetNamespace="http://tempuri.org/aLouryehDataSet.xsd" xmlns:mstns="http://tempuri.org/aLouryehDataSet.xsd" xmlns="http://tempuri.org/aLouryehDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="aLouryehConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="aLouryehConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Joc.Properties.Settings.GlobalReference.Default.aLouryehConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="aLouryehDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="aLouryehDataSet" msprop:Generator_UserDSName="aLouryehDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Elevi" msprop:Generator_TableClassName="EleviDataTable" msprop:Generator_TableVarName="tableElevi" msprop:Generator_TablePropName="Elevi" msprop:Generator_RowDeletingName="EleviRowDeleting" msprop:Generator_RowChangingName="EleviRowChanging" msprop:Generator_RowEvHandlerName="EleviRowChangeEventHandler" msprop:Generator_RowDeletedName="EleviRowDeleted" msprop:Generator_UserTableName="Elevi" msprop:Generator_RowChangedName="EleviRowChanged" msprop:Generator_RowEvArgName="EleviRowChangeEvent" msprop:Generator_RowClassName="EleviRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_elev" msprop:Generator_ColumnVarNameInTable="columnID_elev" msprop:Generator_ColumnPropNameInRow="ID_elev" msprop:Generator_ColumnPropNameInTable="ID_elevColumn" msprop:Generator_UserColumnName="ID_elev" type="xs:string" />
+              <xs:element name="Nume_elev" msprop:Generator_ColumnVarNameInTable="columnNume_elev" msprop:Generator_ColumnPropNameInRow="Nume_elev" msprop:Generator_ColumnPropNameInTable="Nume_elevColumn" msprop:Generator_UserColumnName="Nume_elev" type="xs:string" minOccurs="0" />
+              <xs:element name="Prenume_elev" msprop:Generator_ColumnVarNameInTable="columnPrenume_elev" msprop:Generator_ColumnPropNameInRow="Prenume_elev" msprop:Generator_ColumnPropNameInTable="Prenume_elevColumn" msprop:Generator_UserColumnName="Prenume_elev" type="xs:string" minOccurs="0" />
+              <xs:element name="ID_Grupa" msprop:Generator_ColumnVarNameInTable="columnID_Grupa" msprop:Generator_ColumnPropNameInRow="ID_Grupa" msprop:Generator_ColumnPropNameInTable="ID_GrupaColumn" msprop:Generator_UserColumnName="ID_Grupa" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Grupe" msprop:Generator_TableClassName="GrupeDataTable" msprop:Generator_TableVarName="tableGrupe" msprop:Generator_TablePropName="Grupe" msprop:Generator_RowDeletingName="GrupeRowDeleting" msprop:Generator_RowChangingName="GrupeRowChanging" msprop:Generator_RowEvHandlerName="GrupeRowChangeEventHandler" msprop:Generator_RowDeletedName="GrupeRowDeleted" msprop:Generator_UserTableName="Grupe" msprop:Generator_RowChangedName="GrupeRowChanged" msprop:Generator_RowEvArgName="GrupeRowChangeEvent" msprop:Generator_RowClassName="GrupeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Grupa" msprop:Generator_ColumnVarNameInTable="columnID_Grupa" msprop:Generator_ColumnPropNameInRow="ID_Grupa" msprop:Generator_ColumnPropNameInTable="ID_GrupaColumn" msprop:Generator_UserColumnName="ID_Grupa" type="xs:string" />
+              <xs:element name="Nume_Grupa" msprop:Generator_ColumnVarNameInTable="columnNume_Grupa" msprop:Generator_ColumnPropNameInRow="Nume_Grupa" msprop:Generator_ColumnPropNameInTable="Nume_GrupaColumn" msprop:Generator_UserColumnName="Nume_Grupa" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="EleviKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Elevi" />
+      <xs:field xpath="mstns:ID_elev" />
+    </xs:unique>
+    <xs:unique name="GrupeKey1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Grupe" />
+      <xs:field xpath="mstns:ID_Grupa" />
+    </xs:unique>
+    <xs:keyref name="FK_Grupe_Elevi" refer="GrupeKey1" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Elevi" />
+      <xs:field xpath="mstns:ID_Grupa" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>
